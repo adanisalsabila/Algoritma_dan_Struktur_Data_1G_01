@@ -41,19 +41,33 @@ public class PraktikumPemilihan {
 
         // jika nilai Huruf yang didapatkan adalah A,B+,B,C+,C maka LULUS, jika nilai D dan E TIDAK LULUS
         if (nilaiAkhir > 80 && nilaiAkhir <= 100) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(A) \nKet : LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : A \nKet : SELAMAT ANDA LULUS");
+            System.out.println("================================");
         } else if (nilaiAkhir > 73 && nilaiAkhir <= 80) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(B+) \nKet : LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : B+ \nKet : SELAMAT ANDA LULUS");
+            System.out.println("================================");
         } else if (nilaiAkhir > 65 && nilaiAkhir <= 73) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(B) \nKet : LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : B \nKet : SELAMAT ANDA LULUS");
+            System.out.println("================================");
         } else if (nilaiAkhir > 60 && nilaiAkhir <= 65) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(C+) \nKet : LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : C+ \nKet : SELAMAT ANDA LULUS");
+            System.out.println("================================");
         } else if (nilaiAkhir > 50 && nilaiAkhir <= 60) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(C) \nKet : LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : C \nKet : SELAMAT ANDA LULUS");
+            System.out.println("================================");
         } else if (nilaiAkhir > 39 && nilaiAkhir <= 50) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(D) \nKet : TIDAK LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai Huruf : D \nKet : MAAF ANDA TIDAK LULUS");
+            System.out.println("================================");
         } else if (nilaiAkhir <= 39) {
-            System.out.println("Nilai akhir Anda adalah : " + nilaiAkhir + "(E) \nKet : TIDAK LULUS");
+            System.out.println("================================");
+            System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : E \nKet : MAAF ANDA TIDAK LULUS");
+            System.out.println("================================");
 
         }
     }
