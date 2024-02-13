@@ -12,6 +12,7 @@ public class PraktikumPemilihan {
         nilaiTugas = sc.nextInt();
         if (nilaiTugas < 0 || nilaiTugas > 100) {
             System.out.println("Nilai tidak valid!");
+            sc.close();
             return;
         }
 
@@ -19,6 +20,7 @@ public class PraktikumPemilihan {
         nilaiKuis = sc.nextInt();
         if (nilaiKuis < 0 || nilaiKuis > 100) {
             System.out.println("Nilai tidak valid!");
+            sc.close();
             return;
         }
 
@@ -26,6 +28,7 @@ public class PraktikumPemilihan {
         nilaiUTS = sc.nextInt();
         if (nilaiUTS < 0 || nilaiUTS > 100) {
             System.out.println("Nilai tidak valid!");
+            sc.close();
             return;
         }
 
@@ -33,6 +36,7 @@ public class PraktikumPemilihan {
         nilaiUAS = sc.nextInt();
         if (nilaiUAS < 0 || nilaiUAS > 100) {
             System.out.println("Nilai tidak valid!");
+            sc.close();
             return;
         }
 
@@ -68,7 +72,7 @@ public class PraktikumPemilihan {
             System.out.println("================================");
             System.out.println("Nilai akhir : " + nilaiAkhir + "\nNilai huruf : E \nKet : MAAF ANDA TIDAK LULUS");
             System.out.println("================================");
-
         }
-    }
+        sc.close();
+    } 
 }

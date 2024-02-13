@@ -28,6 +28,7 @@ public class PraktikumPerulangan {
             } else {
                 System.out.print("* ");
             }
+            sc.close();
         }
     }
 }
