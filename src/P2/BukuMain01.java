@@ -18,8 +18,8 @@ public class BukuMain01 {
         bk2.terjual(11);
         bk2.tampilInformasi();
 
-        Buku01 bk3 = new Buku01("Pulang", "Tere Liye", 404, 10, 89000);
-        bk3.tampilInformasi();
+        Buku01 bkAdani = new Buku01("Pulang", "Tere Liye", 404, 10, 89000);
+        bkAdani.tampilInformasi();
     }
 
 }
