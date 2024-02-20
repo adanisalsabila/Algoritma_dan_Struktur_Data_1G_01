@@ -1,3 +1,4 @@
+package P1;
 public class PraktikumFungsi {
     static final int aglonema = 75000;
     static final int keladi = 50000;
