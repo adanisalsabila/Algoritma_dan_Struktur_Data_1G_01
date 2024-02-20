@@ -1,16 +1,16 @@
 package P2;
 
 public class Buku01 {
-    public Buku01(){
+    public Buku01() {
     }
 
-public Buku01 (String jud, String pg, int hal, int stok, int har){
-    judul = jud;
-    pengarang = pg;
-    halaman=hal;
-    this.stok=stok;
-    harga=har;
-}
+    public Buku01(String jud, String pg, int hal, int stok, int har) {
+        judul = jud;
+        pengarang = pg;
+        halaman = hal;
+        this.stok = stok;
+        harga = har;
+    }
 
     String judul, pengarang;
     int halaman, stok, harga;
@@ -41,5 +41,23 @@ public Buku01 (String jud, String pg, int hal, int stok, int har){
 
     void gantiHarga(int hrg) {
         harga = hrg;
+    }
+
+    int hitungHargaTotal(int jumlahTerjual) {
+        return harga * jumlahTerjual;
+    }
+
+    double hitungDiskon(int hargaTotal) {
+        if (hargaTotal > 150000) {
+            return 0.12 * hargaTotal;
+        } else if (hargaTotal >= 75000 && hargaTotal <= 150000) {
+            return 0.05 * hargaTotal;
+        } else {
+            return 0;
+        }
+    }
+
+    double hitungHargaBayar(int hargaTotal, double diskon) {
+        return hargaTotal - diskon;
     }
 }
