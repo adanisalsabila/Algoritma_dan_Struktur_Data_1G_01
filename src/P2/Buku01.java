@@ -3,6 +3,7 @@ public class Buku01 {
     String judul, pengarang;
     int halaman, stok, harga;
 
+
     void tampilInformasi() {
     System.out.println("Judul : "+judul);
     System.out.println("Pengarang : "+pengarang);
@@ -13,10 +14,16 @@ public class Buku01 {
     }
 
     void terjual(int jml) {
-        stok -= jml;
+            if (stok > 0) {
+                stok -= jml;
+                if (stok < 0) {
+                    stok = 0;
+                }
+            } else {
+                System.out.println("Stok sudah habis.");
+            }
+        }
         
-    }
-
     void restock(int jml) {
         stok += jml;
     }
