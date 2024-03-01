@@ -12,9 +12,16 @@ public class ArrayBalok {
             System.out.println("Volume balok ke-" + i + ": " + blArray[i].hitungVolume());
         }
 
-        Segitiga segitiga = new Segitiga(3, 4);
-        System.out.println("Luas segitiga: " + segitiga.hitungLuas());
-        System.out.println("Keliling segitiga: " + segitiga.hitungKeliling());
+        Segitiga[] sgArray = new Segitiga[4];
+
+        sgArray[0] = new Segitiga(10, 4);
+        sgArray[1] = new Segitiga(20, 10);
+        sgArray[2] = new Segitiga(15, 6);
+        sgArray[3] = new Segitiga(25, 10);
+
+        for (int i = 0; i < sgArray.length; i++) {
+            System.out.println("sgArray ke-" + i + " alas: " + sgArray[i].alas + ", tinggi: " + sgArray[i].tinggi);
+        }
     }
 }
 
@@ -33,6 +40,7 @@ class Segitiga {
 
     public double hitungKeliling() {
         double sisiMiring = Math.sqrt(Math.pow(alas, 2) + Math.pow(tinggi, 2)); 
+        double keliling = alas + tinggi + sisiMiring; // Keliling segitiga = alas + tinggi + sisi miring
         return keliling;
     }
 }
