@@ -21,6 +21,9 @@ public class ArrayBalok {
 
         for (int i = 0; i < sgArray.length; i++) {
             System.out.println("sgArray ke-" + i + " alas: " + sgArray[i].alas + ", tinggi: " + sgArray[i].tinggi);
+            System.out.println("Luas segitiga: " + sgArray[i].hitungLuas());
+            System.out.println("Keliling segitiga: " + sgArray[i].hitungKeliling());
+            System.out.println();
         }
     }
 }
