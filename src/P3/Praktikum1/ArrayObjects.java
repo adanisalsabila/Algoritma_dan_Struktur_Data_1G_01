@@ -1,4 +1,4 @@
-package Praktikum1;
+package P3.Praktikum1;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Praktikum1;
+package P3.Praktikum1;
 public class PersegiPanjang {
     public int panjang;
     public int lebar;
