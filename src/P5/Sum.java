@@ -2,7 +2,7 @@ package P5;
 
 public class Sum {
     int elemen;
-    double keuntungan[], total;
+    double keuntungan[], total, totalUntungSemuaPerusahaan, keuntunganPerusahaan;
 
     Sum(int elemen) {
         this.elemen = elemen;
@@ -28,5 +28,4 @@ public class Sum {
         }
         return 0;
     }
-
 }
