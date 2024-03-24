@@ -1,4 +1,4 @@
-package P5;
+package P5.Praktikum2;
 
 public class Pangkat {
     public int nilai, pangkat;
