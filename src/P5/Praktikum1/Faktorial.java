@@ -1,4 +1,4 @@
-package P5;
+package P5.Praktikum1;
 
 public class Faktorial {
     public int nilai;
