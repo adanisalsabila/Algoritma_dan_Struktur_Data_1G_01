@@ -32,6 +32,16 @@ public class PencarianBuku01 {
         return posisi;
     }
 
+    public Buku01 FindBuku(int cari) {
+        for (int j = 0; j < idx; j++) {
+            if (listBk[j].kodeBuku == cari) {
+                return listBk[j]; // Mengembalikan buku jika ditemukan
+            }
+        }
+        return null; // Mengembalikan null jika buku tidak ditemukan
+    }
+
+
     public void tampilPosisi(int x, int pos) {
         if (pos != -1) {
             System.out.println("Data " + x + " ditemukan pada indeks " + pos);
@@ -51,5 +61,4 @@ public class PencarianBuku01 {
             System.out.println("Data " + x + " tidak ditemukan");
         }
     }
-    }
-
+}
