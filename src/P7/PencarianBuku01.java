@@ -22,25 +22,38 @@ public class PencarianBuku01 {
     }
 
     public int FindSeqSearch(int cari) {
-        int posisi = -1; // Initialize posisi to -1, indicating not found
-        for (int j = 0; j < idx; j++) { // Loop through valid elements only (up to idx)
+        int posisi = -1; 
+        for (int j = 0; j < idx; j++) { 
             if (listBk[j].kodeBuku == cari) {
-                posisi = j; // Update posisi if book is found
+                posisi = j; 
                 break;
             }
         }
         return posisi;
     }
 
+    public int FindBinarySearch(int cari, int left, int right) {
+        if (right >= left) {
+            int mid = left + (right - left) / 2;
+            if (listBk[mid].kodeBuku == cari) {
+                return mid;
+            } else if (listBk[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid - 1);
+            } else {
+                return FindBinarySearch(cari, mid + 1, right);
+            }
+        }
+        return -1; 
+    }
+
     public Buku01 FindBuku(int cari) {
         for (int j = 0; j < idx; j++) {
             if (listBk[j].kodeBuku == cari) {
-                return listBk[j]; // Mengembalikan buku jika ditemukan
+                return listBk[j]; 
             }
         }
-        return null; // Mengembalikan null jika buku tidak ditemukan
+        return null; 
     }
-
 
     public void tampilPosisi(int x, int pos) {
         if (pos != -1) {
