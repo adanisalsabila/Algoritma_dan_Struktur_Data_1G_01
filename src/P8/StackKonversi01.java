@@ -54,12 +54,16 @@ public class StackKonversi01 {
 
     public String konversiDesimalKeBiner(int kode) {
         
-        StringBuilder biner = new StringBuilder();
+        StackKonversi01 stack = new StackKonversi01();
         while (kode != 0) {
             int sisa = kode % 2;
-            biner.insert(0, sisa); 
+            stack.push(sisa); 
             kode = kode / 2;
         }
-        return biner.toString();
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }
