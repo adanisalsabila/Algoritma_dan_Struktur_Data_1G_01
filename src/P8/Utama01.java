@@ -12,7 +12,8 @@ public class Utama01 {
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Lihat barang teratas.");
+            System.out.println("5. Keluar");
             System.out.println("Pilih Operasi :");
             int pilihan = scanner.nextInt();
 
@@ -35,7 +36,10 @@ public class Utama01 {
                     gudang.tampilkanBarang();
                     break;
                 case 4 :
-                    System.exit(0); // Exiting the program
+                    gudang.lihatBarangTeratas(); 
+                    break;
+                case 5 :
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Pilihan tidak valid");
