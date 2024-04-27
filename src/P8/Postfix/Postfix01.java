@@ -42,16 +42,17 @@ public class Postfix01 {
 
     public int derajat (char c) {
     switch (c) {
+        // pertanyaan 1 : merubah nilai prioritas tiap operator
         case '^' :
-        return 3;
+        return 4;
         case '%' :
-        return 2;
+        return 3;
         case '/' :
-        return 2;
+        return 3;
         case '*' :
-        return 2;
+        return 3;
         case '-' :
-        return 1;
+        return 2;
         case '+' :
         return 1;
         default :
