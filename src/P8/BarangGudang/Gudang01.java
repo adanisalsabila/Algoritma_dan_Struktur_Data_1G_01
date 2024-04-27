@@ -61,6 +61,60 @@ public class Gudang01 {
         }
     }
 
+    public Barang01 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang01 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah : " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+        public Barang01 cariBarang(Object cari) {
+            if (cari instanceof String) {
+                String namaBarang = (String) cari;
+                return cariBarangDenganNama(namaBarang);
+            } else if (cari instanceof Integer) {
+                int kodeBarang = (int) cari;
+                return cariBarangDenganKode(kodeBarang);
+            } else {
+                System.out.println("Tidak valid");
+                return null;
+            }
+        }
+    
+        public Barang01 cariBarangDenganNama(String namaBarang) {
+            if (!cekKosong()) {
+                for (int i = top; i >= 0; i--) {
+                    if (tumpukan[i].nama.equals(namaBarang)) {
+                        System.out.println("Barang " + namaBarang + " ditemukan di Gudang.");
+                        return tumpukan[i];
+                    }
+                }
+                System.out.println("Barang " + namaBarang + " tidak ditemukan di Gudang.");
+                return null;
+            } else {
+                System.out.println("Tumpukan barang kosong.");
+                return null;
+            }
+        }
+    
+        public Barang01 cariBarangDenganKode(int kodeBarang) {
+            if (!cekKosong()) {
+                for (int i = top; i >= 0; i--) {
+                    if (tumpukan[i].kode == kodeBarang) {
+                        System.out.println("Barang dengan kode " + kodeBarang + " ditemukan di Gudang.");
+                        return tumpukan[i];
+                    }
+                }
+                System.out.println("Barang dengan kode " + kodeBarang + " tidak ditemukan di Gudang.");
+                return null;
+            } else {
+                System.out.println("Tumpukan barang kosong.");
+                return null;
+            }
+        }
     public void tampilkanBarang() {
         if (!cekKosong()) {
             System.out.println("Rincian tumpukan barang di Gudang.");
