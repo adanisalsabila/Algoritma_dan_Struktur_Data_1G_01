@@ -23,7 +23,7 @@ public class QueueMain {
         do {
             menu();
             pilih = sc.nextInt();
-            sc.nextLine(); // Membersihkan buffer
+            sc.nextLine(); 
             switch (pilih) {
                 case 1:
                     System.out.println("No Rekening : ");
@@ -37,7 +37,7 @@ public class QueueMain {
                     System.out.println("Saldo : ");
                     double saldo = sc.nextDouble();
                     Nasabah nb = new Nasabah(norek, nama, alamat, umur, saldo);
-                    sc.nextLine(); // Membersihkan buffer
+                    sc.nextLine(); 
                     antri.Enqueue(nb);
                     break;
                 case 2:
