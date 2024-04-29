@@ -15,11 +15,19 @@ public class Queue {
     }
 
     public boolean IsEmpty() {
-        return size == 0;
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean IsFull() {
-        return size == max;
+        if (size == max) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void peek() {
@@ -59,15 +67,20 @@ public class Queue {
             if (IsEmpty()) {
                 front = rear = 0;
             } else {
-                rear = (rear + 1) % max;
+                if (rear == max - 1) {
+                    rear = 0;
+                } else {
+                    rear++;
+                }
             }
             data[rear] = dt;
             size++;
         } else {
-            System.out.println("Queue sudah penuh.");
+            System.out.println("Queue sudah penuh. Program dihentikan.");
+            System.exit(0);
         }
     }
-
+    
     public int Dequeue() {
         int dt = 0;
         if (!IsEmpty()) {
@@ -76,11 +89,17 @@ public class Queue {
             if (size == 0) {
                 front = rear = -1;
             } else {
-                front = (front + 1) % max;
+                if (front == max - 1) {
+                    front = 0;
+                } else {
+                    front++;
+                }
             }
         } else {
-            System.out.println("Queue masih kosong.");
+            System.out.println("Queue masih kosong. Program dihentikan.");
+            System.exit(0);
         }
         return dt;
     }
 }
+    
