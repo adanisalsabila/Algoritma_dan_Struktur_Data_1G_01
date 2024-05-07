@@ -83,4 +83,98 @@ public class SingleLinkedList {
             }
         }
     }
+
+    int getData(int index) {
+        Node tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    int indexOf(int key) {
+        Node temp = head;
+        int index = 0;
+        while (temp != null && temp.data != key) {
+            temp = temp.next;
+            index++;
+        }
+        if (temp != null) {
+            return index;
+        } else {
+            return -1; // Mengembalikan -1 jika kunci tidak ditemukan
+        }
+    }
+
+    void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+        }
+    }
+
+    void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            Node temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            temp.next = null;
+            tail = temp;
+        }
+    }
+
+    void remove(int key) {
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else {
+            if (head.data == key) {
+                removeFirst();
+                return;
+            }
+            Node temp = head;
+            while (temp.next != null && temp.next.data != key) {
+                temp = temp.next;
+            }
+            if (temp.next != null) {
+                temp.next = temp.next.next;
+                if (temp.next == null) {
+                    tail = temp;
+                }
+            } else {
+                System.out.println("Elemen tidak ditemukan");
+            }
+        }
+    }
+
+    void removeAt(int index) {
+        if (index < 0) {
+            System.out.println("Indeks tidak valid");
+            return;
+        }
+        if (index == 0) {
+            removeFirst();
+            return;
+        }
+        Node temp = head;
+        for (int i = 0; temp != null && i < index - 1; i++) {
+            temp = temp.next;
+        }
+        if (temp == null || temp.next == null) {
+            System.out.println("Indeks melebihi batas");
+            return;
+        }
+        temp.next = temp.next.next;
+        if (temp.next == null) {
+            tail = temp;
+        }
+    }
 }
