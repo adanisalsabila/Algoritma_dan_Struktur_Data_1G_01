@@ -52,12 +52,18 @@ public class DoubleLinkedLists {
                 current = current.next;
                 i++;
             }
+            if (current.prev == null) {
+                Node newNode = new Node(null, item, current);
+                current.prev = newNode;
+                head = newNode;
+            } else {
             Node newNode = new Node(current.prev, item, current);
             current.prev.next = newNode;
             current.prev = newNode;
             size++;
         }
     }
+}
 
     public int size() {
         return size;
