@@ -12,7 +12,8 @@ public class GraphMain01 {
 
         gedung.printGraph();
 
-        
+        gedung.removeEdge(1, 3);
+        gedung.printGraph();
         }
     }
 
