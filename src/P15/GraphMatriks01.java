@@ -7,6 +7,11 @@ public class GraphMatriks01 {
     public GraphMatriks01(int v) {
         vertex = v;
         matriks = new int[v][v];
+        for (int i = 0; i < v; i++) {
+            for (int j = 0; j < v; j++) {
+                matriks[i][j] = -1;
+            }
+        }
     }
 
     public void makeEdge(int asal, int tujuan, int jarak) {
@@ -29,4 +34,26 @@ public class GraphMatriks01 {
         }
     }
 
+    public void degree(int asal) {
+        int inDegree = 0;
+        int outDegree = 0;
+
+        // outDegree
+        for (int j = 0; j < vertex; j++) {
+            if (matriks[asal][j] != -1) {
+                outDegree++;
+            }
+        }
+
+        // inDegree
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[i][asal] != -1) {
+                inDegree++;
+            }
+        }
+
+        System.out.println("InDegree dari Gedung " + (char) ('A' + asal) + ": " + inDegree);
+        System.out.println("OutDegree dari Gedung " + (char) ('A' + asal) + ": " + outDegree);
+        System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " + (inDegree + outDegree));
+    }
 }
