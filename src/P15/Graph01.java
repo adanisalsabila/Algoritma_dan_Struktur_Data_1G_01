@@ -1,5 +1,7 @@
 package P15;
 
+import java.util.Stack;
+
 public class Graph01 {
     int vertex;
     DoubleLinkedList01[] list;
@@ -38,10 +40,6 @@ public class Graph01 {
     }
 
     public void removeEdge(int asal, int tujuan) {
-        for (int i = 0; i < vertex; i++) {
-            if (i == tujuan) {
-            }
-        }
         list[asal].remove(tujuan);
     }
 
@@ -63,5 +61,28 @@ public class Graph01 {
             }
         }
         System.out.println();
+    }
+
+    public boolean isConnected(int asal, int tujuan) throws Exception {
+        boolean[] visited = new boolean[vertex];
+        Stack<Integer> stack = new Stack<>();
+        stack.push(asal);
+
+        while (!stack.isEmpty()) {
+            int current = stack.pop();
+            if (current == tujuan) {
+                return true;
+            }
+            if (!visited[current]) {
+                visited[current] = true;
+                for (int i = 0; i < list[current].size(); i++) {
+                    int neighbor = list[current].get(i);
+                    if (!visited[neighbor]) {
+                        stack.push(neighbor);
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
